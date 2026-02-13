@@ -154,12 +154,11 @@ How to deploy production apps to Vercel
 
 How to build responsive UI with Tailwind CSS
 
-🔗 Links
+🔗 Links 
 
 ⭐ Project Repository: https://github.com/sowmyaN03/smart-bookmark
 
-🌐 Live Demo: (Add your Vercel link here)
-
+🌐 Live Demo: https://smartbookmark-sowmyan03s-projects.vercel.app/
 
 🙌 Thank You
 
