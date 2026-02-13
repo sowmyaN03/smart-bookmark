@@ -1,0 +1,26 @@
+{
+  "name": "smart-bookmark-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "npx tailwindcss -v >/dev/null 2>&1 || true"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
+    "next": "13.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-loading-skeleton": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.9.3"
+  }
+}

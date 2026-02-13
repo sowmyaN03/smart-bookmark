@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+:root{
+  /* Light purple -> light blue gradient */
+  --bg-start: #E9D5FF; /* light purple */
+  --bg-end: #DFFAFB;   /* light blue */
+  --primary: #8B5CF6;  /* violet-ish */
+  --primary-600: #7C3AED;
+  --accent: #60A5FA;   /* light blue */
+  --card-bg: rgba(255,255,255,0.30); /* more translucent card */
+  --input-bg: rgba(255,255,255,0.6);
+  --muted: #6b7280;
+  --text-dark: #0b1220;
+}
+
+body {
+  @apply text-gray-900 antialiased;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  background-attachment: fixed;
+  -webkit-font-smoothing:antialiased;
+  color: var(--text-dark);
+}
+
+/* App container card */
+.app-container {
+  background: linear-gradient(180deg, rgba(255,255,255,0.26), rgba(255,255,255,0.18));
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 40px rgba(11,18,32,0.14);
+}
+
+/* Primary button */
+.btn-primary{
+  background: linear-gradient(90deg,var(--primary-600), var(--primary));
+  color: white;
+  border-radius: 10px;
+  padding: .6rem 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(124,58,237,0.18);
+}
+.btn-primary:hover{ opacity: .98 }
+
+/* Secondary (accent) */
+.btn-accent{ background: linear-gradient(90deg,var(--accent), #34D399); color: white; border-radius:10px; padding:.55rem 1rem; box-shadow: 0 8px 18px rgba(96,165,250,0.12) }
+
+/* Card styling for forms and lists (transparent with shadow) */
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(11,18,32,0.08);
+  color: var(--text-dark);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+/* Hover effect for prominent items (bookmarks) */
+.bookmark-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(11,18,32,0.18);
+}
+
+/* Inputs: transparent look with black text */
+input, textarea {
+  background: var(--input-bg);
+  color: var(--text-dark);
+  border: 1px solid rgba(15,23,42,0.06);
+}
+
+input::placeholder, textarea::placeholder { color: rgba(11,18,32,0.5) }
+
+/* Dark mode placeholder visibility */
+.dark input::placeholder, .dark textarea::placeholder { color: rgba(230,238,248,0.45) }
+
+/* Input focus */
+input:focus, textarea:focus { outline: none; box-shadow: 0 6px 20px rgba(124,58,237,0.14); border-color: var(--primary-600) }
+
+/* Muted text */
+.muted { color: var(--muted) }
+
+/* Dark theme overrides (applied when documentElement has class 'dark') */
+.dark {
+  --bg-start: #1b0430; /* very dark purple */
+  --bg-end: #04213a;   /* dark blue */
+  --primary: #7c3aed;  /* bright violet */
+  --primary-600: #5b21b6;
+  --accent: #0ea5e9;
+  /* make cards and container translucent instead of opaque black */
+  --card-bg: rgba(255,255,255,0.03);
+  --input-bg: rgba(255,255,255,0.02);
+  --muted: #9aa4b2;
+  --text-dark: #e6eef8; /* light text on dark bg */
+}
+
+/* Tweak some elements specifically for dark mode */
+.dark .app-container {
+  background: linear-gradient(180deg, rgba(6,8,18,0.18), rgba(6,8,18,0.12));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+.dark .card {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  /* ensure card background uses the translucent var */
+  background: var(--card-bg);
+}
+.dark .btn-primary { box-shadow: 0 8px 20px rgba(92,33,182,0.26) }
+.dark input, .dark textarea { border-color: rgba(255,255,255,0.06) }
+
+
