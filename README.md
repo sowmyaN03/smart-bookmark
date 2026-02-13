@@ -11,6 +11,7 @@ This project was developed as a fullstack micro-challenge submission and demonst
 
 )
 
+
 🔧 Tech Stack
 Feature                    |          Technology
 ----------------------------------------------------------------------
@@ -21,6 +22,7 @@ Styling	                   |     Tailwind CSS
 Deployment	               |     Vercel
 Database Policies	         |     Supabase Row Level Security
 Realtime Sync              |   	 Supabase Realtime Channels
+
 
 ✨ Features
 
